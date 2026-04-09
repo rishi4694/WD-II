@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Paragraph Control</title>
+    <style>
+        #myPara {
+            font-size: 18px;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="toggleParagraph()">Show/Hide Paragraph</button>
+
+    <p id="myPara" onmouseover="changeColor()" onmouseout="resetColor()">
+        This is a sample paragraph. Hover over me!
+    </p>
+
+    <script>
+        let isVisible = true;
+
+        function toggleParagraph() {
+            const para = document.getElementById("myPara");
+            
+            if (isVisible) {
+                para.style.display = "none";
+            } else {
+                para.style.display = "block";
+            }
+
+            isVisible = !isVisible;
+        }
+
+        function changeColor() {
+            document.getElementById("myPara").style.color = "red";
+        }
+
+        function resetColor() {
+            document.getElementById("myPara").style.color = "black";
+        }
+    </script>
+
+</body>
+</html>
